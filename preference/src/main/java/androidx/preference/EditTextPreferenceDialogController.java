@@ -16,13 +16,14 @@
 
 package androidx.preference;
 
+import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;
-
-import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
 
 public class EditTextPreferenceDialogController extends PreferenceDialogController {
 
@@ -86,7 +87,9 @@ public class EditTextPreferenceDialogController extends PreferenceDialogControll
         return (EditTextPreference) getPreference();
     }
 
-    /** @hide */
+    /**
+     * @hide
+     */
     @RestrictTo(LIBRARY_GROUP)
     @Override
     protected boolean needInputMethod() {

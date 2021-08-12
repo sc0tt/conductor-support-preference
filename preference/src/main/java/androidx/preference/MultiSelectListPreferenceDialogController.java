@@ -18,9 +18,9 @@ package androidx.preference;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-import androidx.preference.MultiSelectListPreference;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -39,13 +39,13 @@ public class MultiSelectListPreferenceDialogController extends PreferenceDialogC
             "MultiSelectListPreferenceDialogController.entryValues";
 
     @SuppressWarnings("WeakerAccess") /* synthetic access */
-    Set<String> mNewValues = new HashSet<>();
+            Set<String> mNewValues = new HashSet<>();
     @SuppressWarnings("WeakerAccess") /* synthetic access */
-    boolean mPreferenceChanged;
+            boolean mPreferenceChanged;
     @SuppressWarnings("WeakerAccess") /* synthetic access */
-    CharSequence[] mEntries;
+            CharSequence[] mEntries;
     @SuppressWarnings("WeakerAccess") /* synthetic access */
-    CharSequence[] mEntryValues;
+            CharSequence[] mEntryValues;
 
     public static MultiSelectListPreferenceDialogController newInstance(String key) {
         MultiSelectListPreferenceDialogController controller =

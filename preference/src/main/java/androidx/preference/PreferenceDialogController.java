@@ -16,6 +16,8 @@
 
 package androidx.preference;
 
+import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
+
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -25,20 +27,23 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.*;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
+
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.appcompat.app.AlertDialog;
+
 import com.bluelinelabs.conductor.Controller;
-import com.bluelinelabs.conductor.RestoreViewOnCreateController;
 import com.bluelinelabs.conductor.Router;
 import com.bluelinelabs.conductor.RouterTransaction;
 import com.bluelinelabs.conductor.changehandler.SimpleSwapChangeHandler;
-
-import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
 
 /**
  * Abstract base class which presents a dialog associated with a
@@ -47,7 +52,7 @@ import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
  * is read once during the initial call to {@link #onCreate(Bundle)} and saved/restored in the saved
  * instance state. Custom subclasses should also follow this pattern.
  */
-public abstract class PreferenceDialogController extends RestoreViewOnCreateController implements
+public abstract class PreferenceDialogController extends Controller implements
         DialogInterface.OnClickListener {
 
     protected static final String ARG_KEY = "key";
@@ -66,11 +71,14 @@ public abstract class PreferenceDialogController extends RestoreViewOnCreateCont
     private CharSequence mPositiveButtonText;
     private CharSequence mNegativeButtonText;
     private CharSequence mDialogMessage;
-    private @LayoutRes int mDialogLayoutRes;
+    private @LayoutRes
+    int mDialogLayoutRes;
 
     private BitmapDrawable mDialogIcon;
 
-    /** Which button was clicked. */
+    /**
+     * Which button was clicked.
+     */
     private int mWhichButtonClicked;
 
     private Dialog dialog;
