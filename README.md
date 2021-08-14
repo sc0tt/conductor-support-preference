@@ -11,7 +11,7 @@ In your root build.gradle:
 ```groovy
 allprojects {
     repositories {
-        ...
+        /// ...
         maven { url 'https://jitpack.io' }
 	}
 }
@@ -20,7 +20,7 @@ allprojects {
 In your module build.gradle:
 ```groovy
 dependencies {
-    ...
+    /// ...
     // For androidx.preference:preference:1.1.1
     implementation 'com.github.sc0tt:conductor-support-preference:1.1.1'
 }
