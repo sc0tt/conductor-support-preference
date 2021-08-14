@@ -1,3 +1,6 @@
+[![](https://jitpack.io/v/sc0tt/conductor-support-preference.svg)](https://jitpack.io/#sc0tt/conductor-support-preference)
+
+
 Library to create preference screens using [Conductor](https://github.com/bluelinelabs/Conductor) controllers instead of fragments.
 
 ## Including the library
@@ -8,7 +11,7 @@ In your root build.gradle:
 ```groovy
 allprojects {
     repositories {
-		...
+        ...
         maven { url 'https://jitpack.io' }
 	}
 }
